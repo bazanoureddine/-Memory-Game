@@ -1,14 +1,15 @@
 /*
  * Create a list that holds all of your cards
  */
-const cards = ["fa-diamond", "fa-diamond",
-    "fa-paper-plane-o", "fa-paper-plane-o",
-    "fa-anchor", "fa-anchor",
-    "fa-bolt", "fa-bolt",
-    "fa-cube", "fa-cube",
-    "fa-bomb", "fa-bomb",
-    "fa-leaf", "fa-leaf",
-    "fa-bicycle", "fa-bicycle"];
+const typeCards = ["fa-diamond",
+    "fa-paper-plane-o",
+    "fa-anchor",
+    "fa-bolt",
+    "fa-cube",
+    "fa-bomb",
+    "fa-leaf",
+    "fa-bicycle"];
+const cards = [...typeCards,...typeCards];
 /*-----------------global variable -------------------*/
 // to restart game
 const divRestart = document.querySelector('.restart');
@@ -228,7 +229,7 @@ function checkWinGame(){
     if(cardOpened == 16 ){
         clearInterval(interval);
         //display the result of score
-        p.textContent=`with ${moves} moves, time: ${time} secondes and ${starRemaining} stars`;
+        p.textContent=`with ${moves} moves, time: ${time-1} secondes and ${starRemaining} stars`;
         myModel.style.display = "block";
     }
 }
