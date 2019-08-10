@@ -225,7 +225,7 @@ function incrementMoves() {
 function checkWinGame(){
     cardOpened=cardOpened+2;
 
-    if(cardOpened == 2){
+    if(cardOpened == 16 ){
         clearInterval(interval);
         //display the result of score
         p.textContent=`with ${moves} moves, time: ${time} secondes and ${starRemaining} stars`;
